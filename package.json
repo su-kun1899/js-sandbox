@@ -11,6 +11,7 @@
     "url": "git+https://github.com/su-kun1899/js-sandbox.git"
   },
   "author": "su-kun1899",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/su-kun1899/js-sandbox/issues"
   },
