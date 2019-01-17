@@ -4,6 +4,7 @@
   "description": "javascript sandbox",
   "main": "index.js",
   "scripts": {
+    "start": "http-server ./src -o",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
@@ -15,5 +16,8 @@
   "bugs": {
     "url": "https://github.com/su-kun1899/js-sandbox/issues"
   },
-  "homepage": "https://github.com/su-kun1899/js-sandbox#readme"
+  "homepage": "https://github.com/su-kun1899/js-sandbox#readme",
+  "devDependencies": {
+    "http-server": "^0.11.1"
+  }
 }
