@@ -5,6 +5,10 @@
     "node": true,
     "es6": true
   },
+  "parser": "babel-eslint",
+  "parserOptions": {
+    "sourceType": "module"
+  },
   "rules": {
     "no-console": "warn"
   }
