@@ -2,10 +2,12 @@
   "name": "js-sandbox",
   "version": "1.0.0",
   "description": "javascript sandbox",
+  "private": true,
   "main": "index.js",
   "scripts": {
     "start": "http-server ./src -o",
     "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "webpack --config webpack.config.js",
     "lint": "eslint ./src --fix"
   },
   "repository": {
@@ -25,7 +27,10 @@
     "eslint": "^5.12.1",
     "eslint-config-prettier": "^4.0.0",
     "eslint-plugin-prettier": "^3.0.1",
-    "http-server": "^0.11.1"
+    "http-server": "^0.11.1",
+    "prettier": "^1.16.1",
+    "webpack": "^4.29.0",
+    "webpack-cli": "^3.2.1"
   },
   "dependencies": {
     "@babel/polyfill": "^7.2.5"
