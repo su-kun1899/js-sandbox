@@ -1,3 +1,3 @@
-console.log('sandbox');
-const hoge = val => val + 1;
-console.log(hoge(1));
+import plus1 from './plus1'
+console.log('sandbox')
+console.log('call plus1', plus1(3))
