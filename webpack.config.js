@@ -3,13 +3,18 @@ const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 
 module.exports = {
-  entry: { main: './src/index.js' },
+  entry: { main: './src/index.js', todo: './src/todo.js' },
   plugins: [
     new CleanWebpackPlugin(['dist']),
     new HtmlWebpackPlugin({
       filename: 'index.html',
       template: './src/html/index.html',
       chunks: ['main']
+    }),
+    new HtmlWebpackPlugin({
+      filename: 'todo.html',
+      template: './src/html/todo.html',
+      chunks: ['todo']
     })
   ],
   output: {
