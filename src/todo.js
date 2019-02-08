@@ -1,1 +1,2 @@
-console.log('todo.js: loaded');
+import { App } from './App.js';
+const app = new App();
