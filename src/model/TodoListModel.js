@@ -46,6 +46,6 @@ export class TodoListModel extends EventEmitter {
    */
   addTodo(todoItem) {
     this.items.push(todoItem);
-    this.emitChange;
+    this.emitChange();
   }
 }
