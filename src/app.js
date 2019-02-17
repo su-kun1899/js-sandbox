@@ -38,7 +38,7 @@ export class App {
       this.todoListModel.addTodo(
         new TodoItemModel({
           title: inputElement.value,
-          comppleted: false
+          completed: false
         })
       );
       inputElement.value = '';
