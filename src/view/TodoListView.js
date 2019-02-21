@@ -14,9 +14,8 @@ export class TodoListView {
     todoItems.forEach(todoItem => {
       const todoItemView = new TodoItemView();
       const todoItemElement = todoItemView.createElement(todoItem, onUpdateTodo, onDeleteTodo);
-
       todoListElement.appendChild(todoItemElement);
-      return todoListElement;
     });
+    return todoListElement;
   }
 }
