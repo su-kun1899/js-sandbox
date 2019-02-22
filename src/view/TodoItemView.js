@@ -20,7 +20,7 @@ export class TodoItemView {
     // チェックボックスの更新イベント
     const inputCheckboxElement = todoItemElement.querySelector('.checkbox');
     inputCheckboxElement.addEventListener('change', () => {
-      onUpdateTodo({ id: todoItem.id, completed: todoItem.completed });
+      onUpdateTodo({ id: todoItem.id, completed: !todoItem.completed });
     });
 
     // 削除ボタンのクリックイベント

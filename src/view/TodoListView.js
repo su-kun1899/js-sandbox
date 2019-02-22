@@ -13,7 +13,7 @@ export class TodoListView {
     const todoListElement = element`<ul />`;
     todoItems.forEach(todoItem => {
       const todoItemView = new TodoItemView();
-      const todoItemElement = todoItemView.createElement(todoItem, onUpdateTodo, onDeleteTodo);
+      const todoItemElement = todoItemView.createElement(todoItem, { onUpdateTodo, onDeleteTodo });
       todoListElement.appendChild(todoItemElement);
     });
     return todoListElement;
