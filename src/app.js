@@ -5,7 +5,32 @@ import { render } from './view/html-util';
 
 export class App {
   constructor() {
-    this.todoListModel = new TodoListModel();
+    this.todoListView = new TodoListView();
+    this.todoListModel = new TodoListModel([]);
+  }
+
+  /**
+   * Todoを追加時に呼ばれるリスナー関数
+   * @param {string} title
+   */
+  handleAdd(title) {
+    this.todoListModel.addTodo(new TodoItemModel({ title, completed: false }));
+  }
+
+  /**
+   * Todoの状態を更新時に呼ばれるリスナー関数
+   * @param {{ id: number, completed: boolean }}
+   */
+  handleUpdate({ id, completed }) {
+    this.todoListModel.updateTodo({ id, completed });
+  }
+
+  /**
+   * Todoを削除時に呼ばれるリスナー関数
+   * @param {{ id: number }}
+   */
+  handleDelete({ id }) {
+    this.todoListModel.deleteTodo({ id });
   }
 
   mount() {
@@ -20,10 +45,10 @@ export class App {
 
       const todoListElement = todoListView.createElement(todoItems, {
         onUpdateTodo: ({ id, completed }) => {
-          this.todoListModel.updateTodo({ id, completed });
+          this.handleUpdate({ id, completed });
         },
         onDeleteTodo: ({ id }) => {
-          this.todoListModel.deleteTodo({ id });
+          this.handleDelete({ id });
         }
       });
       render(todoListElement, containerElement);
@@ -34,12 +59,7 @@ export class App {
     formElement.addEventListener('submit', event => {
       event.preventDefault();
       // 新しいTodoItemをTodoListへ追加する
-      this.todoListModel.addTodo(
-        new TodoItemModel({
-          title: inputElement.value,
-          completed: false
-        })
-      );
+      this.handleAdd(inputElement.value);
       inputElement.value = '';
     });
   }
