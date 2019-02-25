@@ -1,6 +1,7 @@
 const path = require('path');
 const HtmlWebpackPlugin = require('html-webpack-plugin');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
+const webpack = require('webpack');
 
 module.exports = {
   entry: { main: './src/index.js', todo: './src/todo.js' },
@@ -15,7 +16,8 @@ module.exports = {
       filename: 'todo.html',
       template: './src/html/todo.html',
       chunks: ['todo']
-    })
+    }),
+    new webpack.EnvironmentPlugin({ NODE_ENV: 'development' })
   ],
   output: {
     filename: '[name].bundle.js',
